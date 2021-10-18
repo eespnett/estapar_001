@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Manobra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manobra</h2>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+@if (ViewData["dataManobra"] != null)
+{
+    List<WebApplicationEstapar.Estapar.Entity.ManobaEnity> retorno = new List<WebApplicationEstapar.Estapar.Entity.ManobaEnity>();
+    retorno = (List<WebApplicationEstapar.Estapar.Entity.ManobaEnity>)ViewData["dataManobra"];
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Carro</th>
+            <th>Manobrista</th>
+            <th>Tipo Manobra</th>
+            <th>Data Início</th>
+            <th>Data Fim</th>
+            <th>Concluído</th>
+            <th>Classificação</th>
+            <th>Ações</th>
+        </tr>
+        @foreach (var item in retorno)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.oCarro.id.ToString() - @item.oCarro.MarcaCarro.ToString() </td>
+                <td>@item.oManobrista.id.ToString() - @item.oManobrista.Nome.ToString() </td>
+                <td>@item.oTipoManobra.id.ToString() - @item.oTipoManobra._TipoManobra.ToString() </td>
+
+                <td>@item.dtManobraInicio.ToString()</td>
+                <td>@item.dtManobraFim.ToString()</td>
+                <td>@item.Concluido.ToString()</td>
+                <td>@item.oClassificacao.id.ToString() - @item.oClassificacao.Descricao.ToString() </td>
+
+                <td>
+
+                    @Html.ActionLink("Excluir", "ExcluirManbra", "Home", new { idManobrista = item.Id })
+                    @Html.ActionLink("Alterar", "ManobraAlterar", "Home", new { idManobrista = item.Id })
+
+
+
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+
+
+@Html.ActionLink("Incluir", "CreateManobra", "Home", new { @class = "btn-default" })
+
+

@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Manobrista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manobrista</h2>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+
+
+@if (ViewData["dataManobrista"] != null)
+{
+    List<WebApplicationEstapar.Estapar.Entity.ManobristaEntity> retorno = new List<WebApplicationEstapar.Estapar.Entity.ManobristaEntity>();
+    retorno = (List<WebApplicationEstapar.Estapar.Entity.ManobristaEntity>)ViewData["dataManobrista"];
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Data Nascimento</th>
+            <th>Ações</th>
+        </tr>
+        @foreach (var item in retorno)
+        {
+    <tr>
+        <td>@item.id</td>
+        <td>@item.Nome</td>
+        <td>@item.CPF</td>
+        <td>@item.DtNascicmento</td>
+        <td>
+          
+                @Html.ActionLink("Excluir", "ExcluirManobrista", "Home", new { idManobrista = item.id })
+                @Html.ActionLink("Alterar", "ManobristaAlterar", "Home", new { idManobrista = item.id })
+
+            </td>
+    </tr>
+        }
+
+    </table>
+}
+
+
+@Html.ActionLink("Incluir", "ManobristaCreate", "Home", new { @class = "btn-default" })

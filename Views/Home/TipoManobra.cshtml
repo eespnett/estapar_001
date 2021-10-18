@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "TipoManobra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TipoManobra</h2>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+
+@if (ViewData["dataTipoManobra"] != null)
+{
+    List<WebApplicationEstapar.Estapar.Entity.TipoManobra> retorno = new List<WebApplicationEstapar.Estapar.Entity.TipoManobra>();
+    retorno = (List<WebApplicationEstapar.Estapar.Entity.TipoManobra>)ViewData["dataTipoManobra"];
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Ações</th>
+        </tr>
+        @foreach (var item in retorno)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item._TipoManobra</td>
+                <td>
+
+                    @Html.ActionLink("Excluir", "ExcluirTipoManobra", "Home", new { idTipoManobra = item.id })
+                    @Html.ActionLink("Alterar", "TipoManobraAlterar", "Home", new { idTipoManobra = item.id })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+
+@Html.ActionLink("Incluir", "TipoManobraCreate", "Home", new { @class = "btn-default" })

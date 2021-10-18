@@ -1,0 +1,62 @@
+﻿
+@using WebApplicationEstapar.Estapar.Entity
+
+@{
+    ViewData["Title"] = "Classificacao";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<h2>Classificacao</h2>
+@if (ViewData["dataClassificacao"] != null)
+{
+    List<WebApplicationEstapar.Estapar.Entity.ClassificacaoEntity> retorno = new List<WebApplicationEstapar.Estapar.Entity.ClassificacaoEntity>();
+    retorno = (List<WebApplicationEstapar.Estapar.Entity.ClassificacaoEntity>)ViewData["dataClassificacao"];
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+        </tr>
+        @foreach (var item in retorno)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.Descricao</td>
+                <td>
+
+                    @Html.ActionLink("Excluir", "ExcluirClassificacao", "Home", new { idClassificacao = item.id })
+                    @Html.ActionLink("Alterar", "ClassificacaoAlterar", "Home", new { idClassificacao = item.id })
+ 
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+ 
+
+@Html.ActionLink("Incluir", "ClassificacaoCreate", "Home", new { @class = "btn-default" })
+
+

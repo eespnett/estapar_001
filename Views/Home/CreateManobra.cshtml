@@ -1,0 +1,76 @@
+﻿@model ManobraModel
+@{
+    ViewData["Title"] = "CreateManobra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateManobra</h2>
+
+@using (Html.BeginForm("CreateManobra", "Home", FormMethod.Post, new { id = "CreateManobra" }))
+{
+    <div class="form-group">
+        <label for="exampleInputEmail1">ID</label>
+        @Html.TextBoxFor(model => Model.Id, new { @readonly = "readonly" })
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Data Início</label>
+        @Html.TextBoxFor(model => Model.DtManobraInicio)
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Data Fim</label>
+        @Html.TextBoxFor(model => Model.DtManobraFim)
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Concluído</label>
+        @Html.CheckBoxFor(model => Model.Concluido)
+
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Carro</label>
+
+        @{
+            SelectList SelectListCarros = new SelectList(Model.oListEntityCarro.ToList(), "id", "PlacaCarro", Model.oCarro.id);
+
+            @Html.DropDownListFor(model => Model.oCarro.id, SelectListCarros, "Selecione um item", new { @class = "form-control" })
+        }
+
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Manobrista</label>
+
+        @{
+            SelectList SelectListManobrista = new SelectList(Model.oListManobristaEntity.ToList(), "id", "Nome", Model.oCarro.id);
+
+            @Html.DropDownListFor(model => Model.oManobrista.id, SelectListManobrista, "Selecione um item", new { @class = "form-control" })
+
+        }
+
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Tipo Manobra</label>
+
+        @{
+            SelectList SelectListTipoManobra = new SelectList(Model.oListTipoManobra.ToList(), "id", "_TipoManobra", Model.oCarro.id);
+
+            @Html.DropDownListFor(model => Model.oTipoManobra.id, SelectListTipoManobra, "Selecione um item", new { @class = "form-control" })
+
+        }
+
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Classificação</label>
+
+        @{
+            SelectList SelectListClassificacao = new SelectList(Model.oListClassificacaoEntity.ToList(), "id", "Descricao", Model.oCarro.id);
+
+            @Html.DropDownListFor(model => Model.oClassificacao.id, SelectListClassificacao, "Selecione um item", new { @class = "form-control" })
+
+        }
+
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+}

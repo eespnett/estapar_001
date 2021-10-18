@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationEstapar", "WebApplicationEstapar.csproj", "{6610E604-03E9-41F6-B931-87935A42CE5C}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DatabaseEstapar", "..\DatabaseEstapar\DatabaseEstapar.sqlproj", "{BF45A28E-4507-40A3-8A3A-726795933026}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6610E604-03E9-41F6-B931-87935A42CE5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6610E604-03E9-41F6-B931-87935A42CE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6610E604-03E9-41F6-B931-87935A42CE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6610E604-03E9-41F6-B931-87935A42CE5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF45A28E-4507-40A3-8A3A-726795933026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF45A28E-4507-40A3-8A3A-726795933026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF45A28E-4507-40A3-8A3A-726795933026}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BF45A28E-4507-40A3-8A3A-726795933026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF45A28E-4507-40A3-8A3A-726795933026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF45A28E-4507-40A3-8A3A-726795933026}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B386613-8507-46A9-9F99-BD7D190E191E}
+	EndGlobalSection
+EndGlobal

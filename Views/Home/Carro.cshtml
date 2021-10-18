@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "Carro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Carro</h2>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+
+
+@if (ViewData["dataCarro"] != null)
+{
+    List<WebApplicationEstapar.Estapar.Entity.EntityCarro> retorno = new List<WebApplicationEstapar.Estapar.Entity.EntityCarro>();
+    retorno = (List<WebApplicationEstapar.Estapar.Entity.EntityCarro>)ViewData["dataCarro"];
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Placa</th>
+            <th>Ações</th>
+        </tr>
+        @foreach (var item in retorno)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.MarcaCarro</td>
+                <td>@item.ModeloCarro</td>
+                <td>@item.PlacaCarro</td>
+                <td>
+                    @Html.ActionLink("Excluir", "ExcluirCarro", "Home", new { idCarro = item.id })
+                    @Html.ActionLink("Alterar", "CarroAlterar", "Home", new { idCarro = item.id })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+
+@Html.ActionLink("Incluir", "CarroCreate", "Home", new { @class = "btn-default" })
+
+ 
+
+
