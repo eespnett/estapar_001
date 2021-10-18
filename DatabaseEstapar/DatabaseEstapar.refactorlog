@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="884d5a7d-7b34-44f9-b6c2-f8dc5665e365" ChangeDateTime="10/16/2021 15:05:43">
+    <Property Name="ElementName" Value="[dbo].[tbManobrista].[MarcaCArro]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tbManobrista]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MarcaCarro" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d97fc3ec-7015-45f8-b9f0-e5cea288e419" ChangeDateTime="10/16/2021 15:06:53">
+    <Property Name="ElementName" Value="[dbo].[tbManobrista].[PlacCarro]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tbManobrista]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PlacaCarro" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f87b9883-a0cf-41b0-9499-e66995e14e93" ChangeDateTime="10/16/2021 15:07:35">
+    <Property Name="ElementName" Value="[dbo].[tbManobrista].[DtNasscimento]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tbManobrista]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DtNascimento" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="159edd0f-c5d9-44a7-8cd5-f449ab8b5303" ChangeDateTime="10/16/2021 15:14:18">
+    <Property Name="ElementName" Value="[dbo].[tbManobra].[DtManobra]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tbManobra]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DtManobraInicio" />
+  </Operation>
+</Operations>
