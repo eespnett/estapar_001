@@ -1,0 +1,1 @@
+﻿insert into tbTipoManobra values (1,'Entrada'), (2,'Retirada')

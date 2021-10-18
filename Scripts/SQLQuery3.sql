@@ -1,0 +1,7 @@
+﻿insert into tbCarro values (1, 'Marca 1', 'Modelo 1', 'Placa 1')
+,(2, 'Marca 2 ', 'Modelo 2', 'Placa 2')
+,(3, 'Marca 3', 'Modelo 3', 'Placa 3')
+,(4, 'Marca 4', 'Modelo 4', 'Placa 4')
+,(5, 'Marca 5', 'Modelo 5', 'Placa 5')
+,(6, 'Marca 6', 'Modelo 6', 'Placa 6')
+,(7, 'Marca 7', 'Modelo 7', 'Placa 7')

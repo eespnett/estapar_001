@@ -1,0 +1,1 @@
+﻿insert into Classificacao values (1,'Ruim'), (2,'Satisfatório'),(3,'Plenamente Satisfatório'), (4,'Muito Satisfatório')
